@@ -57,5 +57,9 @@
 	},
 	"keywords": [
 		"svelte"
-	]
+	],
+	"dependencies": {
+		"lucide-svelte": "^0.503.0",
+		"tailwind-merge": "^3.2.0"
+	}
 }
