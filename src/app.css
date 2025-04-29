@@ -1,1 +1,119 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+    --color-orange: #FE7743;
+    --color-cream: #EFEEEA;
+    --color-navy: #273F4F;
+}
+
+@layer base {
+    :root {
+        --background: 43 9% 93%;
+        --foreground: 200 30% 23%;
+
+        --card: 43 9% 93%;
+        --card-foreground: 200 30% 23%;
+
+        --popover: 43 9% 93%;
+        --popover-foreground: 200 30% 23%;
+
+        --primary: 19 99% 63%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 200 30% 23%;
+        --secondary-foreground: 43 9% 93%;
+
+        --muted: 43 9% 85%;
+        --muted-foreground: 200 30% 40%;
+
+        --accent: 19 99% 63%;
+        --accent-foreground: 0 0% 100%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 200 30% 23%;
+        --input: 200 30% 23%;
+        --ring: 19 99% 63%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 200 30% 23%;
+        --foreground: 43 9% 93%;
+
+        --card: 200 30% 18%;
+        --card-foreground: 43 9% 93%;
+
+        --popover: 200 30% 18%;
+        --popover-foreground: 43 9% 93%;
+
+        --primary: 19 99% 63%;
+        --primary-foreground: 0 0% 0%;
+
+        --secondary: 43 9% 93%;
+        --secondary-foreground: 200 30% 23%;
+
+        --muted: 200 30% 30%;
+        --muted-foreground: 43 9% 80%;
+
+        --accent: 19 99% 63%;
+        --accent-foreground: 0 0% 0%;
+
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        --border: 43 9% 93%;
+        --input: 43 9% 93%;
+        --ring: 19 99% 63%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-[hsl(var(--border))];
+    }
+
+    body {
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    }
+}
+
+@layer components {
+    .retro-box {
+        @apply border-4 border-[hsl(var(--border))];
+    }
+
+    .retro-box-sm {
+        @apply border-2 border-[hsl(var(--border))];
+    }
+
+    .retro-button {
+        @apply border-2 border-[hsl(var(--border))] transition-all;
+    }
+
+    .retro-inset {
+        @apply border-2 border-[hsl(var(--border))] bg-[hsl(var(--muted))];
+    }
+}
+
+.retro-pattern {
+    background-image: radial-gradient(#273f4f 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.retro-stripes {
+    background: repeating-linear-gradient(45deg, #fe7743, #fe7743 10px, #ff8f63 10px, #ff8f63 20px);
+}
+
+.retro-dots {
+    background-image: radial-gradient(#fe7743 1px, transparent 1px);
+    background-size: 10px 10px;
+}
+
+.retro-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(39, 63, 79, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(39, 63, 79, 0.1) 1px, transparent 1px);
+}
