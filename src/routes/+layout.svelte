@@ -1,27 +1,27 @@
 <script lang="ts">
-	  import '../app.css';
-    import { BarChart3, ChevronsUpDown, CirclePower, Cog, LogOut, Moon, Sun, User } from 'lucide-svelte';
-    import { page } from '$app/stores';
-	import { theme } from '$lib/stores/theme';
-    import Button from '$lib/components/ui/button/Button.svelte';
-    import DropdownMenu from '$lib/components/ui/dropdown-menu/DropdownMenu.svelte';
-    import DropdownMenuContent from '$lib/components/ui/dropdown-menu/DropdownMenuContent.svelte';
-    import DropdownMenuItem from '$lib/components/ui/dropdown-menu/DropdownMenuItem.svelte';
-    import DropdownMenuTrigger from '$lib/components/ui/dropdown-menu/DropdownMenuTrigger.svelte';
-    import DropdownMenuLabel from '$lib/components/ui/dropdown-menu/DropdownMenuLabel.svelte';
-    import DropdownMenuSeparator from '$lib/components/ui/dropdown-menu/DropdownMenuSeparator.svelte';
-    import Avatar from '$lib/components/ui/avatar/Avatar.svelte';    
-    import Tester from '$lib/static/tester.svg'
-    let botRunning = true;
-    function toggleBotStatus() {
-        botRunning = !botRunning;
-    }
-    const navigation = [
-        { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
-        { name: "Backtesting", href: "/backtesting", icon: ChevronsUpDown },
-        { name: "Settings", href: "/settings", icon: Cog },
-    ]
-    const pathname = $page.url.pathname;
+  import '../app.css';
+  import { BarChart3, ChevronsUpDown, CirclePower, Cog, LogOut, Moon, Sun, User } from 'lucide-svelte';
+  import { page } from '$app/stores';
+  import { theme } from '$lib/stores/theme';
+  import Button from '$lib/components/ui/button/Button.svelte';
+  import DropdownMenu from '$lib/components/ui/dropdown-menu/DropdownMenu.svelte';
+  import DropdownMenuContent from '$lib/components/ui/dropdown-menu/DropdownMenuContent.svelte';
+  import DropdownMenuItem from '$lib/components/ui/dropdown-menu/DropdownMenuItem.svelte';
+  import DropdownMenuTrigger from '$lib/components/ui/dropdown-menu/DropdownMenuTrigger.svelte';
+  import DropdownMenuLabel from '$lib/components/ui/dropdown-menu/DropdownMenuLabel.svelte';
+  import DropdownMenuSeparator from '$lib/components/ui/dropdown-menu/DropdownMenuSeparator.svelte';
+  import Avatar from '$lib/components/ui/avatar/Avatar.svelte';    
+  import Tester from '$lib/static/tester.svg'
+  let botRunning = true;
+  function toggleBotStatus() {
+      botRunning = !botRunning;
+  }
+  const navigation = [
+      { name: "Dashboard", href: "/dashboard", icon: BarChart3 },
+      { name: "Backtesting", href: "/backtesting", icon: ChevronsUpDown },
+      { name: "Settings", href: "/settings", icon: Cog },
+  ]
+  const pathname = $page.url.pathname;
 </script>
 
 <div class="flex min-h-screen flex-col bg-cream">

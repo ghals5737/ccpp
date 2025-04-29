@@ -61,6 +61,7 @@
 		"svelte"
 	],
 	"dependencies": {
+		"chart.js": "^4.4.9",
 		"lucide-svelte": "^0.503.0",
 		"postcss": "^8.5.3",
 		"svelte-preprocess": "^6.0.3",
