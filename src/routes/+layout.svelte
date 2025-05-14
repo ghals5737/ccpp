@@ -1,6 +1,6 @@
 <script lang="ts">
   import '../app.css';
-  import { BarChart3, ChevronsUpDown, CirclePower, Cog, LogOut, Moon, Sun, User } from 'lucide-svelte';
+  import { BarChart3, ChevronsUpDown, CirclePower, Cog, LogOut, Moon, Sun, User, X, Terminal } from 'lucide-svelte';
   import { page } from '$app/stores';
   import { theme } from '$lib/stores/theme';
   import Button from '$lib/components/ui/button/Button.svelte';
@@ -24,79 +24,71 @@
   const pathname = $page.url.pathname;
 </script>
 
-<div class="flex min-h-screen flex-col bg-cream">
-  <div class="h-2 w-full retro-stripes"></div>
-  <header class="sticky top-0 z-50 flex h-16 items-center bg-navy px-4 md:px-6 text-cream">
-    <div class="flex items-center gap-4 md:gap-6">
-      <a href="/dashboard" class="flex items-center gap-2 font-bold">
-        <CirclePower class="h-6 w-6 text-orange" />
-        <span class="hidden md:inline-block font-grotesk text-xl tracking-wider">CRYPTOBOT</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6">
-        {#each navigation as item}
-          <a            
-            href={item.href}
-            class={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-orange
-             ${pathname === item.href ? "text-orange" : "text-cream"}`
-             }
+<div class="flex min-h-screen flex-col font-mono bg-[#0d1117] text-[#e6edf3]">
+  <div class="terminal-header flex items-center justify-between">
+    <div class="flex items-center">
+      <Terminal class="h-4 w-4 mr-2" />
+      <span class="font-bold">System Monitor</span>
+      <span class="ml-2 text-[#8b949e]">v1.0.3</span>
+    </div>
+    <div class="flex items-center space-x-2">
+      <span class="px-2 py-0.5 bg-[#0d1117] text-[#3fb950] text-xs rounded">CONNECTED</span>
+      <X class="h-4 w-4 text-[#8b949e] hover:text-[#e6edf3] cursor-pointer" />
+    </div>
+  </div>
+  <div class="flex flex-1">
+    <div class="w-48 bg-[#161b22] border-r border-[#30363d]">
+      <div class="p-3 border-b border-[#30363d]">
+        <div class="flex items-center justify-between">
+          <span class="text-xs text-[#8b949e]">SYSTEM STATUS</span>
+          <div class={`h-2 w-2 rounded-full ${botRunning ? "bg-[#3fb950]" : "bg-[#f85149]"}`}></div>
+        </div>
+        <div class="mt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={toggleBotStatus}
+            class="w-full text-xs h-7 bg-[#0d1117] border-[#30363d] hover:bg-[#1f2937]"
           >
+            {botRunning ? "STOP PROCESS" : "START PROCESS"}
+          </Button>
+        </div>
+      </div>
+
+      <nav class="mt-2">
+        <div class="px-3 py-2 text-xs text-[#8b949e]">NAVIGATION</div>
+        {#each navigation as item}
+          <a
+            href={item.href}
+            class={`
+              flex items-center px-3 py-2 text-sm border-l-2
+              ${pathname === item.href ? "border-[#3fb950] bg-[#0d1117] text-[#e6edf3]" : "border-transparent text-[#8b949e] hover:bg-[#1f2937]"}
+              `}
+          >
+            <item.icon class="h-4 w-4 mr-3" />
             {item.name}
           </a>
         {/each}
       </nav>
+
+      <div class="absolute bottom-0 w-48 p-3 border-t border-[#30363d] bg-[#161b22]">
+        <div class="text-xs text-[#8b949e] mb-1">SYSTEM INFO</div>
+        <div class="text-xs text-[#8b949e] flex justify-between">
+          <span>CPU:</span>
+          <span class="text-[#e6edf3]">12%</span>
+        </div>
+        <div class="text-xs text-[#8b949e] flex justify-between">
+          <span>MEM:</span>
+          <span class="text-[#e6edf3]">1.2GB</span>
+        </div>
+        <div class="text-xs text-[#8b949e] flex justify-between">
+          <span>UPTIME:</span>
+          <span class="text-[#e6edf3]">3d 7h 22m</span>
+        </div>
+      </div>
     </div>
-    <div class="ml-auto flex items-center gap-4">
-      <Button
-        variant={botRunning ? "default" : "outline"}
-        size="sm"
-        on:click={toggleBotStatus}
-        class={`hidden md:flex retro-button font-bold
-         ${botRunning ? "bg-orange hover:bg-orange/90 text-black" : "text-cream border-cream"}`
-        }
-      >
-        {botRunning ? "BOT RUNNING" : "BOT STOPPED"}
-      </Button>
-      <Button
-        variant="ghost"
-        size="icon"
-        aria-label="Toggle Theme"
-        class="mr-2 text-cream hover:text-orange"
-        on:click={() => {
-          const theme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-          document.documentElement.classList.toggle('dark');
-        }}
-      >
-        <Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <Moon class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        <span class="sr-only">Toggle theme</span>
-      </Button>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" class="rounded-full border-2 border-cream">
-            <Avatar class="h-8 w-8" src={Tester} alt="Tester" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" class="retro-box-sm">
-          <DropdownMenuLabel className="font-bold">MY ACCOUNT</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem class="font-mono">
-            <User class="mr-2 h-4 w-4" />
-            Profile
-          </DropdownMenuItem>
-          <DropdownMenuItem class="font-mono">
-            <Cog class="mr-2 h-4 w-4" />
-            Settings
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem class="font-mono">
-            <LogOut class="mr-2 h-4 w-4" />
-            Log out
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
-  </header>
-<main class="flex-1">
-    <slot />
-</main>
+    <main class="flex-1 overflow-auto terminal-scrollbar">
+        <slot />
+    </main>
+  </div>
 </div>

@@ -3,12 +3,12 @@
     import { page } from '$app/stores';
     import { theme } from '$lib/stores/theme';
     import Button from '$lib/components/ui/button/Button.svelte';
-    import DropdownMenu from '$lib/components/ui/dropdown-menu/dropdown-menu.svelte';
-    import DropdownMenuContent from '$lib/components/ui/dropdown-menu/dropdown-menu-content.svelte';
-    import DropdownMenuItem from '$lib/components/ui/dropdown-menu/dropdown-menu-item.svelte';
-    import DropdownMenuTrigger from '$lib/components/ui/dropdown-menu/dropdown-menu-trigger.svelte';
-    import DropdownMenuLabel from '$lib/components/ui/dropdown-menu/dropdown-menu-label.svelte';
-    import DropdownMenuSeparator from '$lib/components/ui/dropdown-menu/dropdown-menu-separator.svelte';
+    import DropdownMenu from '$lib/components/ui/dropdown-menu/DropdownMenu.svelte';
+    import DropdownMenuContent from '$lib/components/ui/dropdown-menu/DropdownMenuContent.svelte';
+    import DropdownMenuItem from '$lib/components/ui/dropdown-menu/DropdownMenuItem.svelte';
+    import DropdownMenuTrigger from '$lib/components/ui/dropdown-menu/DropdownMenuTrigger.svelte';
+    import DropdownMenuLabel from '$lib/components/ui/dropdown-menu/DropdownMenuLabel.svelte';
+    import DropdownMenuSeparator from '$lib/components/ui/dropdown-menu/DropdownMenuSeparator.svelte';
     import Avatar from '$lib/components/ui/avatar/Avatar.svelte';
     import AvatarImage from '$lib/components/ui/avatar/AvatarImage.svelte';
     import Tester from '$lib/static/tester.svg'
