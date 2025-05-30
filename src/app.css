@@ -2,8 +2,6 @@
 
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @font-face {
   font-family: 'JetBrains Mono';
   src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
@@ -12,66 +10,68 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-  font-family: 'JetBrains Mono', monospace;
+  --background: 215 23% 7%;
+    --foreground: 210 18% 93%;
+
+    --card: 215 28% 10%;
+    --card-foreground: 210 18% 93%;
+
+    --popover: 215 28% 10%;
+    --popover-foreground: 210 18% 93%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 18% 93%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 25% 27%;
+    --accent-foreground: 210 18% 93%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 18% 93%;
+
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 142 76% 36%;
+
+    --radius: 0rem;
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --background: 215 23% 7%;
+  --foreground: 210 18% 93%;
+
+  --card: 215 28% 10%;
+  --card-foreground: 210 18% 93%;
+
+  --popover: 215 28% 10%;
+  --popover-foreground: 210 18% 93%;
+
+  --primary: 142 76% 36%;
+  --primary-foreground: 0 0% 0%;
+
+  --secondary: 215 25% 27%;
+  --secondary-foreground: 210 18% 93%;
+
+  --muted: 215 25% 15%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 215 25% 27%;
+  --accent-foreground: 210 18% 93%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 18% 93%;
+
+  --border: 215 25% 27%;
+  --input: 215 25% 27%;
+  --ring: 142 76% 36%;
 }
 
-@theme inline {
+/* @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -107,13 +107,142 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-}
+} */
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  /* * {
+    border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  } */
+}
+
+
+@layer components {
+  
+  .terminal-header {
+    background-color: #161b22;
+    color: #8b949e;
+    font-size: 0.75rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-bottom: 1px solid #30363d;
   }
+
+  .terminal-window {
+    border: 1px solid #30363d;
+    background-color: #0d1117;
+    border-radius: 0;
+  }
+
+  .terminal-section {
+    border: 1px solid #30363d;
+    background-color: #0d1117;
+    border-radius: 0;
+  }
+
+  .terminal-input {
+    background-color: #161b22;
+    border-color: #30363d;
+    color: #e6edf3;
+    border-radius: 0;
+  }
+
+  .terminal-table-header {
+    background-color: #161b22;
+    color: #8b949e;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .terminal-table-row {
+    border-bottom: 1px solid #30363d;
+  }
+
+  .terminal-table-row:hover {
+    background-color: #161b22;
+  }
+
+  .log-entry {
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    border-bottom: 1px solid #30363d;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .log-time {
+    color: #8b949e;
+  }
+
+  .log-info {
+    color: #58a6ff;
+  }
+
+  .log-success {
+    color: #3fb950;
+  }
+
+  .log-warning {
+    color: #d29922;
+  }
+
+  .log-error {
+    color: #f85149;
+  }
+
+  .tab-active {
+    background-color: #0d1117;
+    color: #e6edf3;
+    border-top: 2px solid #3fb950;
+  }
+
+  .tab-inactive {
+    background-color: #161b22;
+    color: #8b949e;
+  }
+
+  .tab-inactive:hover {
+    background-color: #1f2937;
+  }
+  .terminal-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-thumb {
+    background: #30363d;
+  }
+  
+  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3f4954;
+  }
+  
+}
+
+
+/* 터미널 모드 스타일 */
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink::after {
+  content: "|";
+  animation: cursor-blink 1s infinite;
 }
