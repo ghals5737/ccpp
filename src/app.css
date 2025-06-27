@@ -10,65 +10,44 @@
 }
 
 :root {
-  --background: 215 23% 7%;
-    --foreground: 210 18% 93%;
+  --background: #1e2329;
+    --foreground: #f0f0f0;
 
-    --card: 215 28% 10%;
-    --card-foreground: 210 18% 93%;
+    --card: #2b3139;
+    --card-foreground: #f0f0f0;
 
-    --popover: 215 28% 10%;
-    --popover-foreground: 210 18% 93%;
+    --popover: #2b3139;
+    --popover-foreground: #f0f0f0;
 
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 0%;
+    --primary: #fcd535;
+    --primary-foreground: #1e2329;
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 210 18% 93%;
+    --secondary: #3c4043;
+    --secondary-foreground: #f0f0f0;
 
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: #3c4043;
+    --muted-foreground: #848e9c;
 
-    --accent: 215 25% 27%;
-    --accent-foreground: 210 18% 93%;
+    --accent: #3c4043;
+    --accent-foreground: #f0f0f0;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 18% 93%;
+    --destructive: #f6465d;
+    --destructive-foreground: #f0f0f0;
 
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 142 76% 36%;
+    --border: #3c4043;
+    --input: #3c4043;
+    --ring: #fcd535;
 
-    --radius: 0rem;
-}
+    --radius: 0.5rem;
 
-.dark {
-  --background: 215 23% 7%;
-  --foreground: 210 18% 93%;
-
-  --card: 215 28% 10%;
-  --card-foreground: 210 18% 93%;
-
-  --popover: 215 28% 10%;
-  --popover-foreground: 210 18% 93%;
-
-  --primary: 142 76% 36%;
-  --primary-foreground: 0 0% 0%;
-
-  --secondary: 215 25% 27%;
-  --secondary-foreground: 210 18% 93%;
-
-  --muted: 215 25% 15%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 215 25% 27%;
-  --accent-foreground: 210 18% 93%;
-
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 18% 93%;
-
-  --border: 215 25% 27%;
-  --input: 215 25% 27%;
-  --ring: 142 76% 36%;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 /* @theme inline {
@@ -119,115 +98,115 @@
 }
 
 
-@layer components {
-  
+@layer base {
   .terminal-header {
-    background-color: #161b22;
-    color: #8b949e;
+    background-color: #2b3139;
+    color: #848e9c;
     font-size: 0.75rem;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #3c4043;
   }
 
   .terminal-window {
-    border: 1px solid #30363d;
-    background-color: #0d1117;
-    border-radius: 0;
+    border: 1px solid #3c4043;
+    background-color: #2b3139;
+    border-radius: 0.5rem;
   }
 
   .terminal-section {
-    border: 1px solid #30363d;
-    background-color: #0d1117;
-    border-radius: 0;
+    border: 1px solid #3c4043;
+    background-color: #2b3139;
+    border-radius: 0.5rem;
   }
 
   .terminal-input {
-    background-color: #161b22;
-    border-color: #30363d;
-    color: #e6edf3;
-    border-radius: 0;
+    background-color: #2b3139;
+    border-color: #3c4043;
+    color: #f0f0f0;
+    border-radius: 0.5rem;
   }
 
   .terminal-table-header {
-    background-color: #161b22;
-    color: #8b949e;
+    background-color: #2b3139;
+    color: #848e9c;
     font-size: 0.75rem;
     text-transform: uppercase;
   }
 
   .terminal-table-row {
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #3c4043;
   }
 
   .terminal-table-row:hover {
-    background-color: #161b22;
+    background-color: rgba(60, 64, 67, 0.3);
   }
 
   .log-entry {
     font-family: monospace;
     font-size: 0.75rem;
     line-height: 1.25rem;
-    border-bottom: 1px solid #30363d;
+    border-bottom: 1px solid #3c4043;
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
   }
 
   .log-time {
-    color: #8b949e;
+    color: #848e9c;
   }
 
   .log-info {
-    color: #58a6ff;
+    color: #fcd535;
   }
 
   .log-success {
-    color: #3fb950;
+    color: #02c076;
   }
 
   .log-warning {
-    color: #d29922;
+    color: #fcd535;
   }
 
   .log-error {
-    color: #f85149;
+    color: #f6465d;
   }
 
   .tab-active {
-    background-color: #0d1117;
-    color: #e6edf3;
-    border-top: 2px solid #3fb950;
+    background-color: #2b3139;
+    color: #f0f0f0;
+    border-top: 2px solid #02c076;
   }
 
   .tab-inactive {
-    background-color: #161b22;
-    color: #8b949e;
+    background-color: #3c4043;
+    color: #848e9c;
   }
 
   .tab-inactive:hover {
-    background-color: #1f2937;
+    background-color: #4a5058;
   }
-  .terminal-scrollbar::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  .terminal-scrollbar::-webkit-scrollbar-track {
-    background: #0d1117;
-  }
-  
-  .terminal-scrollbar::-webkit-scrollbar-thumb {
-    background: #30363d;
-  }
-  
-  .terminal-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #3f4954;
-  }
-  
 }
 
+/* 터미널 모드 스타일 */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: #2b3139;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: #3c4043;
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4a5058;
+}
 
 /* 터미널 모드 스타일 */
 @keyframes cursor-blink {

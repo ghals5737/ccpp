@@ -52,14 +52,13 @@
                 placeholder="Enter system password"
                 value={password}
                 oninput={(e: Event) => password = (e.target as HTMLInputElement).value}
-                class="pl-10 h-9 bg-[#0d1117] border-[#30363d] text-[#e6edf3] placeholder:text-[#8b949e] focus-visible:ring-[#3fb950]"
-                autoFocus
+                class="pl-10 h-9 bg-[#0d1117] border-[#30363d] text-[#e6edf3] placeholder:text-[#8b949e] focus-visible:ring-[#3fb950]"                
               />
             </div>
           </div>
 
           {#if error}
-            <Alert.Root className="bg-[#2d1213] border-[#f85149] text-[#f85149] py-2">
+            <Alert.Root class="bg-[#2d1213] border-[#f85149] text-[#f85149] py-2">
               <AlertCircle class="h-4 w-4" />
               <Alert.Description class="text-xs">Invalid password. Access denied.</Alert.Description>
             </Alert.Root>
